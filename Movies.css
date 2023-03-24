@@ -112,7 +112,7 @@ a {
 .box{
     border-radius: 5px;
     margin: 30px 10px;
-    padding: 20px;
+    padding: 30px;
     border: solid rgb(120, 116, 117) 0.5px;
     transition: transform 1s;
 }
