@@ -1,21 +1,3 @@
-// function button(){
-//     var x =  document.querySelector('nav-items');
-//     if (x.style.display == 'none'){
-//         x.style.display = 'block';
-//     } else{
-//         x.style.display = 'none';
-//     }
-// }
-
-
-// var y =document.querySelector('nav-items');
-// var x = document.querySelector('icon').onclick = function button(){
-//     if (y.style.display == 'none')
-//         y.style.display = 'block';
-//     else {
-//         y.style.display = 'none'
-//     }
-//     }
 
 function Button(y) {
     y = window.matchMedia('(max-width: 992px)');
