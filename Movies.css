@@ -3,11 +3,11 @@
 * {
     padding: 0px;
     margin: 0px;
-    
+    box-sizing: border-box;
 }
 
 body {
-    background-image: url("https://www.shutterstock.com/shutterstock/videos/1014075857/thumb/1.jpg?ip=x480");
+    background-image: url("https://t3.ftcdn.net/jpg/03/72/81/26/360_F_372812601_NQgClqdfGgEJ4ZNnW7dxevtzpK8eLAsZ.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -21,6 +21,7 @@ body {
     width: 100vw;
     padding: 10px;
     align-items: center;
+    justify-content: space-around;
     position: fixed;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) ;
 }
@@ -28,10 +29,8 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100vw;
     align-items: center;
     justify-content: center;
-    position: fixed;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 }
 
@@ -52,7 +51,7 @@ a {
 
 .heading {
     color: white;
-    margin-left: 8%;
+    margin-left: 0px;
     padding: 10px;
     font-family: "Monoton";
 
@@ -72,8 +71,8 @@ a {
 
 .h1 {
     color: white;
-    font-family:cursive;
-    margin-top: 100px;
+    font-family: cursive;
+    margin-top: 150px;
     font-size: 40px;
     margin-bottom: 30px;
     text-align: center;
@@ -105,7 +104,7 @@ a {
 
 .cards {
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -113,7 +112,7 @@ a {
     border-radius: 5px;
     margin: 30px 10px;
     padding: 30px;
-    border: solid rgb(120, 116, 117) 0.5px;
+    border: solid rgb(206, 186, 191) 0.5px;
     transition: transform 1s;
 }
 
@@ -124,8 +123,6 @@ a {
     
 }
 
-
-
  .footer {
      background-color: #000129;
      text-align: center;
@@ -135,13 +132,13 @@ a {
     color: white;
     font-family: "Monoton";
     padding-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
  }
 
 .image-icon{
     height: 45px;
     width: 45px;
-    margin: 20px;
+    margin: 30px;
     animation-name: hover;
     cursor: pointer;
     animation-duration: 2s;
@@ -156,6 +153,48 @@ a {
     font-size: 25px;
    margin-top: 5px;
 }
+input{
+    padding-left: 120%;
+    border-radius: 3px;
+    border: solid 0px;
+    width: 250px;
+    margin: 2px;
+    max-width: 65px;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.input:hover{
+    border: solid rgb(68, 68, 210);
+    outline:none;
+
+}
+.search-input{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 2%;
+    margin-left:10% ;
+
+}
+.search-input .open{
+    max-width: 260px;
+
+}
+
+.search-icon{
+    position: relative;
+    margin-top: 3px;
+    color: black;
+    padding: 2px;
+    left: 120%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 110px 120px 120px 100px;
+    cursor: pointer;
+}
+.close{
+    margin-left: 180px;
+}
+
+
 @keyframes hover {
     0%,
         100% {
@@ -181,7 +220,7 @@ a {
     .icon {
         display: block;
         cursor: pointer;
-        margin-right: 5px;
+
     }
 
     .icon .line {
@@ -190,8 +229,9 @@ a {
         height: 2px;
         background: white;
         margin: 7px;
-        margin-right: 20px;
+        margin-right: 40%;
     }
+    
    
     #navitem{
         display: none;
@@ -206,6 +246,19 @@ a {
         width: 100%;
         left: 0px;
     }
+    .heading {
+       text-align: center;
+
+    
+        }
+        .search-input {
+            margin-left: 40%;
+            margin-right: 5px;
+        }
+        input{
+            padding-left: 350%;
+        }
+
 
 
 }
@@ -250,6 +303,13 @@ a {
         left: 0px;
     }
 
+        .search-input {
+            margin-left: 20%;
+            margin-right: 1%;
+        }
 
+                input {
+                    padding-left: 450%;
+                }
         
 }
