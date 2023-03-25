@@ -13,12 +13,29 @@
 
 <div id="home">
     <header class="nav">
-        <h1 class="heading">Movies...</h1>
+        <h1 class="heading">Movies</h1>
+        <div class="search-input">
+            <span class="search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search search-icon"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </span>
+            <input  class="input"type="text"  placeholder="Search... " />
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg close"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+            </svg>
+        </div>
         <div class="icon" onclick="Button()">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </div>
+        
         <ul class="nav-items" id="navitem">
             <li class="items"><a href="#home" onclick="Button()">Home</a></li>
             <li class="items"><a href="#movies" onclick="Button()">Movies</a></li>
@@ -44,7 +61,7 @@
                 <div class="box">
                     <img class="image"
                         src="https://cdn.marvel.com/content/1x/stellarvortex_reald_digital_poster_1080x1350_v1.jpg" />
-                    <p class="p">Doctor's <br>Strange</p>
+                    <p class="p">Doctor's Strange</p>
                 </div>
                 <div class="box">
                     <img class="image" src="https://shivahubhd.pages.dev/Images/The%20Gray%20Man%20(2022).jpg" />
@@ -181,6 +198,7 @@
 
     </div>
     <p class="p"> Terms and Privacy Notice</p>
+    
 </div>
 
 
