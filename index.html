@@ -14,34 +14,35 @@
 <div id="home">
     <header class="nav">
         <h1 class="heading">Movie</h1>
+        
+        <div class="icon" onclick="Button()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
         <div class="search-input">
             <span class="search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search search-icon"
-                    viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-search search-icon" viewBox="0 0 16 16">
                     <path
                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg>
             </span>
-            <input  class="input"type="text"  placeholder="Search... " />
-            
+            <input class="input" type="text" placeholder="Search... " />
+        
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-lg close"
                 viewBox="0 0 16 16">
                 <path
                     d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
             </svg>
         </div>
-        <div class="icon" onclick="Button()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        
+
         <ul class="nav-items" id="navitem">
-            <li class="items"><a href="#home" onclick="Button()">Home</a></li>
-            <li class="items"><a href="#movies" onclick="Button()">Movies</a></li>
-            <li class="items"><a href="#series" onclick="Button()">Series</a></li>
-            <li class="items"><a href="#kid" onclick="Button()">Kids Space</a></li>
-            <li class="items"><a href="#contact" onclick="Button()">Contact</a></li>
+            <a href="#home" onclick="Button()"><li class="items">Home</li></a>
+            <a href="#movies" onclick="Button()"><li class="items">Movies</li></a>
+            <a href="#series" onclick="Button()"><li class="items">Series</li></a>
+            <a href="#kid" onclick="Button()"><li class="items">Kids Space</li></a>
+            <a href="#contact" onclick="Button()"><li class="items">Contact</li></a>
 
         </ul>
 
@@ -139,11 +140,11 @@
             <div class="box">
                 <img class="image"
                     src="https://assets-prd.ignimgs.com/2022/01/14/gameofthrones-allseasons-sq-1642120207458.jpg" />
-                <p class="p">Game of <br/>Thrones</p>
+                <p class="p">Game of <br />Thrones</p>
             </div>
             <div class="box">
                 <img class="image" src="https://posterspy.com/wp-content/uploads/2021/11/squid-game2.png " />
-                <p class="p">Squid <br/>Game
+                <p class="p">Squid <br />Game
                 </p>
             </div>
         </div>
@@ -188,7 +189,7 @@
 
 
 <div id="contact" class="footer">
-    <h1 class="footer-h">Follow Us On</h1>
+    <p class="footer-h">Follow Us On</p>
     <div>
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="image-icon" />
         <img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png"
@@ -198,7 +199,8 @@
 
     </div>
     <p class="p"> Terms and Privacy Notice</p>
-    
+
+
 </div>
 
 
