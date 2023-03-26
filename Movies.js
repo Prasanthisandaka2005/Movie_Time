@@ -19,7 +19,7 @@ function Button(y) {
 
 }
 let inputBox = document.querySelector("input");
-let search = document.querySelector(".search");
+let search = document.querySelector(".search-input");
 
 search.addEventListener("click" ,() => inputBox.classList.add("open"));
 
