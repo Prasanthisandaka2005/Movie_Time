@@ -21,6 +21,31 @@ function Button(y) {
 let inputBox = document.querySelector("input");
 let search = document.querySelector(".search-input");
 
-search.addEventListener("click" ,() => inputBox.classList.add("open"));
+search.addEventListener("click", () => inputBox.classList.add("open"));
 
 
+const searchFun = () =>{
+    let filter = document.getElementById('myInput').value.toUpperCase(); 
+    
+    let mydata = document.getElementById('data');
+
+    let cards = mydata.getElementsByClassName('box');
+
+
+    for(var i=0; i<cards.length; i++){
+        let p = cards[i].getElementsByTagName('p')[0];
+
+        if(p){
+
+            let textvalue = p.textContent || p.innerHTML;
+
+            if (textvalue.toUpperCase().indexOf(filter) > -1 ){
+                 cards[i].style.display = "";
+
+            }else{
+                cards[i].style.display = "none" ;
+            }
+
+        }
+    }
+}
