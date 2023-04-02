@@ -239,8 +239,8 @@ input {
     width: 50px;
 }
 .cast-h{
-    padding-top: 10px;
-    font-family: cursive;
+    padding-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .cast-img{
     margin-top: 10px;
@@ -248,7 +248,7 @@ input {
     width: 50px;
     border-radius: 250px;
     border: solid white 2px;
-    margin: 2px;
+    margin: 20px 10px 0 0;
 }
 
 @keyframes hover {
