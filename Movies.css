@@ -259,19 +259,21 @@ input {
     overflow: hidden;
     opacity: 0;
     transition: .75s ease;
+    padding: 20px;
     color: white;
+    letter-spacing: 2px;
 }
 .movie:hover  .overlay{
      opacity: 1;
-     padding-top: 90px;
+     padding-top: 50px;
 }
 .topMovie:hover .overlay {
     opacity: 1;
-    padding-top: 90px;
+    padding-top: 30px;
 }
 .kidMo:hover .overlay {
     opacity: 1;
-    padding-top: 90px;
+    padding-top: 30px;
 }
 .overlay h2{
     padding-top: 10%;
@@ -318,7 +320,7 @@ input {
     color: rgb(221, 147, 8);
 }
 .items.highlight{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(65, 6, 50);
 }
 
 
