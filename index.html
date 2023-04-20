@@ -18,12 +18,12 @@
         <header class="nav">
             <h1 class="heading">Movie</h1>
 
-            <div class="icon" onclick="Button()">
+            <div class="icon" onclick="Button()" id="hamburger">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            <div class="search-input">
+            <form class="search-input" id="form">
                 <span class="search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                         class="bi bi-search search-icon" viewBox="0 0 16 16">
@@ -31,14 +31,14 @@
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                 </span>
-                <input class="input" id="myInput" name="" type="text" placeholder="Search... " onkeyup="searchFun()" />
+                <input class="input" id="myInput" name="" type="text" placeholder="Search... " />
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
                     class="bi bi-x-lg close" viewBox="0 0 16 16">
                     <path
                         d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                 </svg>
-            </div>
+            </form>
 
             <ul class="nav-items" id="navitem">
                 <a href="#home" onclick="Button()">
@@ -67,25 +67,29 @@
                     <center>
                         <h1 class="h1">Latest Movies</h1>
                     </center>
-                    <div class="cards">
-                        <div class="box">
+                    <div class="cards" id="main">
+                        <div class="movie">
                             <img class="image" src="https://m.media-amazon.com/images/I/61O8KP0CYVS._SY741_.jpg " />
                             <p class="p">Avatar</p>
                             <div class="overlay">
                                 <h2>Avatar</h2>
-
-                                <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
-                                        class="imbd" /> <span class="span">7.8 / 10</span></a>
-                                <div>
-                                    <h3 class="cast-h">Cast</h3>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg/800px-Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg"
+                                <a>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
+                                        class="imbd" /> 
+                                        <span class="span">7.8 / 10</span></a>
+                                    <h3 class="cast-h">Overview</h3>
+                                    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg/800px-Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg"
                                         class="cast-img" />
-                                    <img src="https://flxt.tmsimg.com/assets/194024_v9_bb.jpg" class="cast-img" />
+                                    <img src="https://flxt.tmsimg.com/assets/194024_v9_bb.jpg" class="cast-img" /> -->
                                 </div>
-
                             </div>
                         </div>
-                        <div class="box">
+                        </div>
+                        </section>
+                        </div>
+
+                        <!-- <div class="cards">
+                         <div class="movie">
                             <img class="image"
                                 src="https://cdn.marvel.com/content/1x/stellarvortex_reald_digital_poster_1080x1350_v1.jpg" />
                             <p class="p">Doctor's <br>Strange</p>
@@ -103,7 +107,7 @@
 
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="movie">
                             <img class="image"
                                 src="https://shivahubhd.pages.dev/Images/The%20Gray%20Man%20(2022).jpg" />
                             <p class="p">Gray Man</p>
@@ -124,7 +128,7 @@
 
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="movie">
                             <img class="image"
                                 src="https://assets.gadgets360cdn.com/pricee/assets/product/202212/babylon_poster_1672374652.jpeg" />
                             <p class="p">Babylon</p>
@@ -143,14 +147,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="movie">
                             <img class="image"
                                 src="https://www.filmibeat.com/img/popcorn/movie_posters/dasara-20220320122651-20470.jpg " />
                             <p class="p">Dasara</p>
                             <div class="overlay">
                                 <h2>Dasara</h2>
                                 <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
-                                        class="imbd" /> <span class="span">8 / 10</span></a>
+                                        class="imbd" /> <span class="span">7.5 / 10</span></a>
                                 <div>
                                     <h3 class="cast-h">Cast</h3>
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Nani_at_an_interview_for_film_companion_%28cropped%29.png"
@@ -163,7 +167,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="movie">
                             <img class="image"
                                 src="https://images.kinorium.com/movie/poster/2393785/w1500_51531021.jpg  " />
                             <p class="p">65</p>
@@ -179,14 +183,14 @@
                                         class="cast-img" />
                                 </div>
                             </div>
+                        </div> 
                         </div>
                     </div>
                 </div>
-            </section>
-            <div id="movies">
+            </section> -->
                 <h1 class="h2">Top Rated</h1>
-                <div class="cards">
-                    <div class="box">
+                <div class="cards" id="Toprated">
+                    <div class="movie">
                         <img class="image"
                             src="https://www.themoviedb.org/t/p/original/hmDNYJkVdooSTNej2AnWV0nbH3q.jpg" />
                         <p class="p">RRR</p>
@@ -195,18 +199,19 @@
                             <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
                                     class="imbd" /> <span class="span">7.9 / 10</span></a>
                             <div>
-                                <h3 class="cast-h">Cast</h3>
-                                <img src="https://www.themoviedb.org/t/p/w500/mNQA0qYtLeemo7mljd9RlG9jUMR.jpg"
+                                <h3 class="cast-h">Overview</h3>
+                                <!-- <img src="https://www.themoviedb.org/t/p/w500/mNQA0qYtLeemo7mljd9RlG9jUMR.jpg"
                                     class="cast-img" />
                                 <img src="https://www.filmibeat.com/img/162x203/popcorn/profile_photos/jr-ntr-20211227113010-4308.jpg"
                                     class="cast-img" />
                                 <img src="https://www.bollywoodhungama.com/wp-content/uploads/2023/02/Alia-Bhatt-1-4.jpg"
-                                    class="cast-img" />
+                                    class="cast-img" /> -->
 
                             </div>
                         </div>
                     </div>
-                    <div class="box">
+                    </div>
+                     <!-- <div class="box">
                         <img class="image"
                             src="https://upload.wikimedia.org/wikipedia/en/7/72/Sanam_Teri_Kasam_2016.jpeg" />
                         <p class="p">Sanam Teri <br>Kasam</p>
@@ -416,11 +421,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="kid">
+            </div> -->
                 <h1 class="kid-h">Movies for Kid's</h1>
-                <div class="cards">
-                    <div class="box">
+                <div class="cards" id="kid">
+                    <div class="movie">
                         <img class="image"
                             src="https://m.media-amazon.com/images/M/MV5BNDJmMzQyMzAtMzMxMy00NTI3LTgzOGMtZDU3Yzc4MjRjNzkwXkEyXkFqcGdeQXVyMTA1OTcyNDQ4._V1_.jpg" />
                         <p class="p">Ice age</p>
@@ -429,14 +433,15 @@
                             <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
                                     class="imbd" /> <span class="span">7.5 / 10</span></a>
                             <div>
-                                <h3 class="cast-h">Cast</h3>
-                                <img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSlx5Im2rL9HabKVzQK-WmjHpX7RMyrUzjaTfDpx1OJ5eG0qxPolrkjji-jYgocL55sKC_95ZcYPyIE-J0Le613NMR59AO3By3UOw_UuUmk"
+                                <h3 class="cast-h">Overview</h3>
+                                <!-- <img src="http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSlx5Im2rL9HabKVzQK-WmjHpX7RMyrUzjaTfDpx1OJ5eG0qxPolrkjji-jYgocL55sKC_95ZcYPyIE-J0Le613NMR59AO3By3UOw_UuUmk"
                                     class="cast-img" />
-                                <img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRDlmX0vU0R5AuOO_k4XBwaqbf1L10qLkHMbfR64Qb6tw0Z4qG54D1snsFl4DYFWP_9Efe2R1SrloRab4" class="cast-img" />
+                                <img src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRDlmX0vU0R5AuOO_k4XBwaqbf1L10qLkHMbfR64Qb6tw0Z4qG54D1snsFl4DYFWP_9Efe2R1SrloRab4" class="cast-img" /> -->
                             </div>
                         </div>
+                    </div> 
                     </div>
-                    <div class="box">
+                    <!-- <div class="box">
                         <img class="image"
                             src="https://lumiere-a.akamaihd.net/v1/images/p_thejunglebook2016_19751_6b8cfcec.jpeg" />
                         <p class="p">Jungle Book</p>
@@ -519,13 +524,12 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div>  -->
 
     <div id="contact" class="footer">
         <p class="footer-h">Follow Us On</p>
         <div>
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="image-icon" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1025px-Instagram-Icon.png" class="image-icon" />
             <img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png"
                 class="image-icon" />
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
@@ -533,9 +537,9 @@
 
         </div>
         <p class="p-footer"> Terms and Privacy Notice</p>
+        <p class="p-footer">All rights are reserved</p>
 
     </div>
-</div>
 
 
 <script src="Movies.js"></script>
