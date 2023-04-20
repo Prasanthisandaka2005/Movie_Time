@@ -102,6 +102,7 @@ a {
     width: 190px;
     border: solid 0px;
     border-radius: 10px;
+    margin: 20px;
 }
 
 .cards {
@@ -109,23 +110,57 @@ a {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
-.box {
+.movie {
     position: relative;
     border-radius: 5px;
+    width: 280px;
     margin: 30px 10px;
+    /* height: 400px; */
+    
     padding: 20px;
     border: solid rgb(206, 186, 191) 0.5px;
     transition: transform 1s;
 }
-
-.box:hover {
+.movie:hover {
     border: solid rgb(132, 124, 124) 0.5px;
     cursor: pointer;
     transform: scale(1.1);
 
 }
+.topMovie {
+    position: relative;
+    border-radius: 5px;
+    width: 280px;
+    margin: 30px 10px;
+    padding: 20px;
+    border: solid rgb(206, 186, 191) 0.5px;
+    transition: transform 1s;
+}
+.topMovie:hover {
+    border: solid rgb(132, 124, 124) 0.5px;
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+.kidMo {
+    position: relative;
+    border-radius: 5px;
+    width: 280px;
+    margin: 30px 10px;
+    padding: 20px;
+    border: solid rgb(206, 186, 191) 0.5px;
+    transition: transform 1s;
+}
+.kidMo:hover {
+    border: solid rgb(132, 124, 124) 0.5px;
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
 
 .footer {
     background-color: #000129;
@@ -163,7 +198,7 @@ a {
     color: white;
     text-align: center;
     font-family: cursive;
-    font-size: 25px;
+    font-size: 20px;
     padding-top: 5px;
 }
 
@@ -219,15 +254,24 @@ input {
     right: 0;
     background-color: rgba(0, 0, 0, 0.85);
     border: 1px;
+    border-radius: 5px;
     text-align: center;
     overflow: hidden;
     opacity: 0;
     transition: .75s ease;
     color: white;
 }
-.box:hover  .overlay{
+.movie:hover  .overlay{
      opacity: 1;
      padding-top: 90px;
+}
+.topMovie:hover .overlay {
+    opacity: 1;
+    padding-top: 90px;
+}
+.kidMo:hover .overlay {
+    opacity: 1;
+    padding-top: 90px;
 }
 .overlay h2{
     padding-top: 10%;
@@ -238,11 +282,12 @@ input {
 
 .imbd{
     padding-top:15px ;
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
 }
 .cast-h{
     padding-top: 20px;
+    padding-bottom: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .cast-img{
@@ -258,7 +303,26 @@ input {
     font-size: 25px;
     margin-left: 10px;
     margin-bottom: 20px;
+    padding: 3px;
+    border: 1px solid rgb(222, 222, 222);
+    color: rgb(184, 217, 184);
 }
+.green{
+    color: rgb(47, 207, 47);
+
+}
+.red{
+    color: rgb(232, 9, 9);
+}
+.orange{
+    color: rgb(221, 147, 8);
+}
+.items.highlight{
+    background-color: rgb(0, 0, 0);
+}
+
+
+
 
 @keyframes hover {
 
@@ -272,7 +336,7 @@ input {
     }
 }
 
-@media (max-width: 417px) {
+@media (max-width: 600px) {
 
     .nav {
         background-color: rgb(7, 15, 55);
@@ -287,7 +351,6 @@ input {
         cursor: pointer;
         margin-right:1%;
         margin-left: 1%;
-
     }
 
     .icon .line {
@@ -330,15 +393,14 @@ input {
         padding-left: 350%;
     }
 
-    .cards {
-        display: flex;
-        flex-direction: row;
-        overflow-y: hidden;
-        overflow-x: 1000;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-    }
+.cards {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 
+}
     .cards::-webkit-scrollbar {
         width: 0;
     }
@@ -346,7 +408,7 @@ input {
 
 }
 
-@media (max-width: 992px) and (min-width: 417px) {
+@media (max-width: 992px) and (min-width: 600px) {
 
     .nav {
         background-color: rgb(7, 15, 55);
@@ -366,8 +428,8 @@ input {
         display: flex;
         flex-direction: row;
         overflow: auto;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
 
     }
 
