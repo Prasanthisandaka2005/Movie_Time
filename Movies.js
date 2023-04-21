@@ -10,6 +10,8 @@ const API_URL_TOP = BASE_URL + '/discover/movie/?certification_country=US&certif
 
 const API_URL_KID = BASE_URL + '/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&'+API_KEY;
 
+const API_URL_DRAMA = BASE_URL +'/discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10&'+ API_KEY;
+
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const searchURL = BASE_URL + '/search/movie?'+ API_KEY;
@@ -26,7 +28,7 @@ const tagsEl = document.getElementById('navitem');
 
 const y = window.matchMedia('(max-width: 992px)');
 
-const TopMo = document.getElementById('Toprated');
+const topRated = document.getElementById('Toprated');
 
 const kid = document.getElementById('kid');
 
@@ -102,9 +104,9 @@ function getMovies(url) {
 getTopMovies(API_URL_TOP);
 
 function getTopMovies(topurl){
-    fetch(topurl).then(res => res.json()).then(topdata => {
-        console.log(topdata.results);
-        showMoviesTop(topdata.results);
+    fetch(topurl).then(res => res.json()).then(topRatedData => {
+        console.log(topRatedData.results);
+        showMoviesTop(topRatedData.results);
 
     })
 }
@@ -145,19 +147,20 @@ function showMovies(data) {
       
         
         `
-
-        main.appendChild(movieEl);
-    });
+        if (title.length < 30) {
+            main.appendChild(movieEl);
+        }
+    })
 }
 
 
 function showKidMovies(kidData) {
     kid.innerHTML = '';
 
-    kidData.forEach(kidMo => {
-        const { title, poster_path, vote_average, overview } = kidMo;
+    kidData.forEach(movie => {
+        const { title, poster_path, vote_average, overview } = movie;
         const kidEl = document.createElement('div');
-        kidEl.classList.add('kidMo');
+        kidEl.classList.add('movie');
         kidEl.innerHTML = `
                             <img class="image"
                             src="${IMG_URL+poster_path}" />
@@ -179,14 +182,14 @@ function showKidMovies(kidData) {
         kid.appendChild(kidEl);
     });
 }
-function showMoviesTop(topdata) {
-    TopMo.innerHTML = '';
+function showMoviesTop(topRatedData) {
+    topRated.innerHTML = '';
 
-    topdata.forEach(topMovie => {
-        const { title, poster_path, vote_average, overview } = topMovie;
-        const topMovieEl = document.createElement('div');
-        topMovieEl.classList.add('topMovie');
-        topMovieEl.innerHTML = `
+    topRatedData.forEach(movie => {
+        const { title, poster_path, vote_average, overview } = movie;
+        const topRatedEl = document.createElement('div');
+        topRatedEl.classList.add('movie');
+        topRatedEl.innerHTML = `
                     <img class="image"
                             src="${IMG_URL + poster_path}" />
                         <p class="p">${title}</p>
@@ -203,7 +206,10 @@ function showMoviesTop(topdata) {
                         </div>
         
         `
-        TopMo.appendChild(topMovieEl);
+        if(title.length < 30){
+            topRated.appendChild(topRatedEl);
+
+        }
     });
 }
 
