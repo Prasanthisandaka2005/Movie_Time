@@ -161,8 +161,9 @@ function showMovies(data) {
         
         `
         if (title.length < 30) {
-            main.appendChild(movieEl);
-        }
+            if (poster_path) {
+                    main.appendChild(movieEl);
+        }}
     })
 }
 
@@ -192,7 +193,10 @@ function showDramas(dramaData) {
         
         `
         if (title.length < 30) {
-            drama.appendChild(movieEl);
+            if (poster_path){
+                drama.appendChild(movieEl);
+
+            }
         }
     })
 }
@@ -222,8 +226,11 @@ function showKidMovies(kidData) {
       
         
         `
-
-        kid.appendChild(kidEl);
+        if (title.length <= 35){
+            if (poster_path) {
+                kid.appendChild(kidEl);
+        }}
+        
     });
 }
 function showMoviesTop(topRatedData) {
@@ -251,9 +258,11 @@ function showMoviesTop(topRatedData) {
         
         `
         if(title.length < 30){
+            if (poster_path) {
+
             topRated.appendChild(topRatedEl);
 
-        }
+                    }        }
     });
 }
 
