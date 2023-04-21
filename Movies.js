@@ -32,6 +32,8 @@ const topRated = document.getElementById('Toprated');
 
 const kid = document.getElementById('kid');
 
+const drama = document.getElementById('drama');
+
 var selectedGenre = []
 
 setGenre();
@@ -111,6 +113,17 @@ function getTopMovies(topurl){
     })
 }
 
+getDramas(API_URL_DRAMA);
+
+function getDramas(drama) {
+
+    fetch(drama).then(res => res.json()).then(dramaData => {
+        console.log(dramaData.results);
+        showDramas(dramaData.results);
+
+    })
+}
+
 getKidMovies(API_URL_KID);
 
 function getKidMovies(kidUrl) {
@@ -149,6 +162,37 @@ function showMovies(data) {
         `
         if (title.length < 30) {
             main.appendChild(movieEl);
+        }
+    })
+}
+
+function showDramas(dramaData) {
+    drama.innerHTML = '';
+
+    dramaData.forEach(movie => {
+        const { title, poster_path, vote_average, overview } = movie;
+        const movieEl = document.createElement('div');
+        movieEl.classList.add('movie');
+        movieEl.innerHTML = `
+                            <img class="image" src="${IMG_URL + poster_path}">
+                            <p class="p">${title}</p>
+                            <div class="overlay">
+                                <h2>${title}</h2>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
+                                        class="imbd" /> 
+                                <a><span class="span ${getColor(vote_average)}">${vote_average}</span></a>
+                                <div>
+                                    <h3 class="cast-h">Overview</h3>
+                                    ${overview};
+                                    
+                                </div>
+
+                            </div>
+      
+        
+        `
+        if (title.length < 30) {
+            drama.appendChild(movieEl);
         }
     })
 }
