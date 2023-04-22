@@ -238,6 +238,7 @@ function showMoviesTop(topRatedData) {
 
     topRatedData.forEach(movie => {
         const { title, poster_path, vote_average, overview } = movie;
+        if(poster_path){
         const topRatedEl = document.createElement('div');
         topRatedEl.classList.add('movie');
         topRatedEl.innerHTML = `
@@ -257,12 +258,11 @@ function showMoviesTop(topRatedData) {
                         </div>
         
         `
-        if(title.length < 30){
-            if (poster_path) {
-
             topRated.appendChild(topRatedEl);
-
-                    }}
+        }
+    else{
+        return
+    }
     })
 }
 
