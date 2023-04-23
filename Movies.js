@@ -6,11 +6,11 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 
 const API_URL = BASE_URL + '/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&' + API_KEY;
 
-const API_URL_TOP = BASE_URL + '/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&' + API_KEY;
+const API_URL_TOP = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 
 const API_URL_KID = BASE_URL + '/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&'+API_KEY;
 
-// const API_URL_DRAMA = BASE_URL +'/discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10&'+ API_KEY;
+const API_URL_DRAMA = BASE_URL +'/discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10&'+ API_KEY;
 
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -32,7 +32,7 @@ const topRated = document.getElementById('Toprated');
 
 const kid = document.getElementById('kid');
 
-// const drama = document.getElementById('drama');
+const drama = document.getElementById('drama');
 
 var selectedGenre = []
 
@@ -113,16 +113,16 @@ function getTopMovies(topurl){
     })
 }
 
-// getDramas(API_URL_DRAMA);
+getDramas(API_URL_DRAMA);
 
-// function getDramas(drama) {
+function getDramas(drama) {
 
-//     fetch(drama).then(res => res.json()).then(dramaData => {
-//         console.log(dramaData.results);
-//         showDramas(dramaData.results);
+    fetch(drama).then(res => res.json()).then(dramaData => {
+        console.log(dramaData.results);
+        showDramas(dramaData.results);
 
-//     })
-// }
+    })
+}
 
 getKidMovies(API_URL_KID);
 
@@ -167,39 +167,39 @@ function showMovies(data) {
     })
 }
 
-// function showDramas(dramaData) {
-//     drama.innerHTML = '';
+function showDramas(dramaData) {
+    drama.innerHTML = '';
 
-//     dramaData.forEach(movie => {
-//         const { title, poster_path, vote_average, overview } = movie;
-//         const movieEl = document.createElement('div');
-//         movieEl.classList.add('movie');
-//         movieEl.innerHTML = `
-//                             <img class="image" src="${IMG_URL + poster_path}">
-//                             <p class="p">${title}</p>
-//                             <div class="overlay">
-//                                 <h2>${title}</h2>
-//                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
-//                                         class="imbd" /> 
-//                                 <a><span class="span ${getColor(vote_average)}">${vote_average}</span></a>
-//                                 <div>
-//                                     <h3 class="cast-h">Overview</h3>
-//                                     ${overview};
+    dramaData.forEach(movie => {
+        const { title, poster_path, vote_average, overview } = movie;
+        const movieEl = document.createElement('div');
+        movieEl.classList.add('movie');
+        movieEl.innerHTML = `
+                            <img class="image" src="${IMG_URL + poster_path}">
+                            <p class="p">${title}</p>
+                            <div class="overlay">
+                                <h2>${title}</h2>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/575px-IMDB_Logo_2016.svg.png"
+                                        class="imbd" /> 
+                                <a><span class="span ${getColor(vote_average)}">${vote_average}</span></a>
+                                <div>
+                                    <h3 class="cast-h">Overview</h3>
+                                    ${overview};
                                     
-//                                 </div>
+                                </div>
 
-//                             </div>
+                            </div>
       
         
-//         `
-//         if (title.length < 30) {
-//             if (poster_path){
-//                 drama.appendChild(movieEl);
+        `
+        if (title.length < 30) {
+            if (poster_path){
+                drama.appendChild(movieEl);
 
-//             }
-//         }
-//     })
-// }
+            }
+        }
+    })
+}
 
 
 function showKidMovies(kidData) {
